@@ -1,9 +1,23 @@
-import React from 'react'
+import React, {Component} from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux'
 
-const MessageView = (props) => {
-  return (
-    <div id='messages'></div>
-  )
+class MessageView extends Component {
+  render() {
+    return (
+      <div id='messages'>
+      {this.props.message.map((item, index) => {
+        return <p key={index}>{item}</p>
+      })}
+      </div>
+    )
+  }
 }
 
-export default MessageView;
+const mapStateToProps = (state) => {
+  return {
+    message: state
+  }
+}
+
+export default connect(mapStateToProps, null)(MessageView);
