@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  max-width: 500px;
+  margin: 5rem auto;
+  padding-bottom: 1rem;
+  border-radius: 7px;
+  overflow: hidden;
+  font-family: sans-serif;
+  box-shadow: 3px 3px 10px -1px rgba(0, 69, 116, 0.89);
+}
+
+h3 {
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+  background:  rgba(2, 99, 163, 0.89);
+  color: azure;
+}
+
+#messages {
+  min-height: 100px;
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid rgba(2, 99, 163, 0.89);
+  border-radius: 48rem;
+  font-size: 0.9rem;  
+  color: rgba(2, 99, 163, 0.89);
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type='text'] {
+  width: 75%;
+}
+
+input[type='submit'] {
+  width: 24%;
+  background: rgba(2, 99, 163, 0.89);
+  color: azure;
+  border: none;
+}
