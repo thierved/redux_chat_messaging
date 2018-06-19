@@ -5,14 +5,16 @@ import { connect } from 'react-redux'
 import {deleteMessage} from '../actions'
 
 class MessageView extends Component {
+
+  renderMessages({message}) {  
+    return <p>{message}</p>;    
+  }
   render() {
+    console.log(this.props.data);
     
     return (
       <div id='messages'>
-      {this.props.message.map((item, index) => {
-        return <p key={index} 
-                  onClick={() => this.props.deleteMessage(this.props.message[0])}>{item}</p>
-      })}
+      {this.renderMessages(this.props.data)}
       </div>
     )
   }
@@ -20,7 +22,7 @@ class MessageView extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    message: state
+    data: state
   }
 }
 
