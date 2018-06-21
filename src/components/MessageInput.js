@@ -11,6 +11,13 @@ class MessageInput extends Component {
     this.state = {
       value: ''
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit() {
+      this.props.addMessage(this.state.value);
+      this.setState({value: ''});
   }
 
   render() {
@@ -18,10 +25,11 @@ class MessageInput extends Component {
         <div className='input'>
             <input type='text' 
                    placeholder='Enter message'
+                   value={this.state.value}
                    onChange={e => this.setState({value: e.target.value})} />
             <input type='submit'
                    value='send'
-                   onClick={() => this.props.addMessage(this.state.value)} />
+                   onClick={this.handleSubmit}/>
       </div>
     )
   }

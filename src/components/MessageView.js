@@ -6,18 +6,17 @@ import {deleteMessage} from '../actions'
 
 class MessageView extends Component {
 
-  renderMessages({data}) {  
+  renderMessages({data, deleteMessage}) {  
     return data.map((item, index) => {
-      return <p key={index}>{item}</p>
+      return <p key={index} 
+                onClick= {() => deleteMessage(index)}
+                className={index%2 === 0? 'even': 'odd'}
+                >{item}</p>
     });
   }
 
-  remove(message) {
-    
-  }
-
   render() {
-    console.log(this.props.data);
+    console.log(this.props);
     
     return (
       <div id='messages'>

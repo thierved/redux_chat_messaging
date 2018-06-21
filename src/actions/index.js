@@ -8,7 +8,7 @@ export const addMessage = (message) => {
     }
 }
 
-export const deleteMessage = (messageIndex) => {
+export const deleteMessage = (messageIndex) => {    
     return {
         type: DELETE_MESSAGE,
         messageIndex
